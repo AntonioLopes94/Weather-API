@@ -17,13 +17,13 @@ import static java.lang.IO.readln;
 public class WeatherApiApplication {
     public static void main(String[] args) throws IOException, InterruptedException {SpringApplication.run(WeatherApiApplication.class, args);
 
-        WeatherService weatherService = new WeatherService();
-        String city = URLEncoder.encode(readln(), StandardCharsets.UTF_8);
-
-        final LocationService locationService = new LocationService();
-        final Location location = locationService.findLocationByName(city);
-        var weather = weatherService.findWeatherByLocation(location);
-        println(weather.toString());
+//        WeatherService weatherService = new WeatherService();
+//        String city = URLEncoder.encode(readln(), StandardCharsets.UTF_8);
+//
+//        final LocationService locationService = new LocationService();
+//        final Location location = locationService.findLocationByName(city);
+//        var weather = weatherService.findWeatherByLocation(location);
+//        println(weather.toString());
 
 
     }

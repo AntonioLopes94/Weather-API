@@ -20,4 +20,17 @@ public class Weather {
                 + maxTemperature+"°C e " + minTemperature+"°C respectivamente";
     }
 
+    public String getCityName() {
+        return cityName;
+    }
+    public float getActualTemperature() {
+        return actualTemperature;
+    }
+    public float getMaxTemperature() {
+        return maxTemperature;
+    }
+    public float getMinTemperature() {
+        return minTemperature;
+    }
+
 }
