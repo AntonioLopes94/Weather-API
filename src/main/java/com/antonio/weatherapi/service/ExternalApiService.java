@@ -17,7 +17,6 @@ public class ExternalApiService {
                 .uri(URI.create(url))
                 .GET().build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
         return mapper.readTree(response.body());
     }
 }

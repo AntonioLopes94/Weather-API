@@ -6,6 +6,7 @@ public class Location {
     private float longitude;
 
     public Location(String cityName,float latitude, float longitude){
+        this.cityName = cityName;
         this.latitude = latitude;
         this.longitude = longitude;
     }
