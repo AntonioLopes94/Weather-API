@@ -1,5 +1,6 @@
 package com.antonio.weatherapi.exception;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -16,6 +17,11 @@ public class GlobalHandlerException {
     @ExceptionHandler(InterruptedException.class)
     public ResponseEntity<String> handleInterruptedException(InterruptedException exception){
         return ResponseEntity.internalServerError().body("Operação interrompida");
+    }
+
+    @ExceptionHandler(CityNotFoundException.class)
+    public ResponseEntity<String> handleCityNotFoundException(CityNotFoundException exception){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 
 }

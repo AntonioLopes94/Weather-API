@@ -1,6 +1,8 @@
 package com.antonio.weatherapi.model;
 
-public class Location {
+import java.io.Serializable;
+
+public class Location implements Serializable {
     private String cityName;
     private float latitude;
     private float longitude;

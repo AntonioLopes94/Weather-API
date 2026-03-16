@@ -1,3 +1,26 @@
 spring:
   application:
     name: Weather API
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  bucket4j:
+    methods:
+      - name: not_an_admin # the name of the configuration for annotation reference
+        cache-name: buckets # the name of the cache
+        rate-limit:
+          bandwidths:
+            - capacity: 5 # refills 5 tokens every 10 seconds (intervall)
+              time: 30
+              unit: seconds
+              refill-speed: interval
+    default-method-metric-tags:
+      - key: IP
+        expression: "@testServiceImpl.getRemoteAddr()" # reference to a bean method to fill the metric key
+        types:
+          - REJECTED_COUNTER
+          - CONSUMED_COUNTER
+          - PARKED_COUNTER
+          - INTERRUPTED_COUNTER
+          - DELAYED_COUNTER

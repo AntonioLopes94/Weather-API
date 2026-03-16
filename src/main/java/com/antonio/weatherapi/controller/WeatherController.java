@@ -11,22 +11,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
-
-import static java.lang.IO.readln;
 
 @RestController
 @RequestMapping("/")
 public class WeatherController {
 
-    private final WeatherService weatherService = new WeatherService();
-    private final LocationService locationService = new LocationService();
+    private final WeatherService weatherService;
+    private final LocationService locationService;
+    public WeatherController(WeatherService weatherService, LocationService locationService) {
+        this.weatherService = weatherService;
+        this.locationService = locationService;
+    }
 
     @GetMapping("/{city}")
     public ResponseEntity<Weather> getWeather(@PathVariable String city) throws IOException, InterruptedException {
-        String cityEncoded = URLEncoder.encode(city, StandardCharsets.UTF_8);
-        Location location = locationService.findLocationByName(cityEncoded);
+        Location location = locationService.findLocationByName(city);
         Weather weather = weatherService.findWeatherByLocation(location);
         return ResponseEntity.ok(weather);
     }

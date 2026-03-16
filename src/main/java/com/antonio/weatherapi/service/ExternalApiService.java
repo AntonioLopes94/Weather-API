@@ -1,5 +1,6 @@
 package com.antonio.weatherapi.service;
 
+import org.springframework.stereotype.Service;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.ObjectMapper;
 
@@ -9,6 +10,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+@Service
 public class ExternalApiService {
     static JsonNode getJsonNodeFromUrl(String url) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();

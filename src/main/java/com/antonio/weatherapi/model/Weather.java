@@ -1,6 +1,8 @@
 package com.antonio.weatherapi.model;
 
-public class Weather {
+import java.io.Serializable;
+
+public class Weather implements Serializable {
     String cityName;
     float actualTemperature;
     float maxTemperature;
