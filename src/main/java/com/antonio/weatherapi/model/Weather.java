@@ -3,10 +3,10 @@ package com.antonio.weatherapi.model;
 import java.io.Serializable;
 
 public class Weather implements Serializable {
-    String cityName;
-    float actualTemperature;
-    float maxTemperature;
-    float minTemperature;
+    private String cityName;
+    private float actualTemperature;
+    private float maxTemperature;
+    private float minTemperature;
 
     public Weather(String cityName, float actualTemperature, float maxTemperature, float minTemperature) {
         this.cityName = cityName;

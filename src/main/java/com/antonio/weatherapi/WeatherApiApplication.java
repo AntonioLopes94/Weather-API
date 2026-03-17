@@ -9,10 +9,5 @@ import java.io.IOException;
 @SpringBootApplication
 @EnableCaching
 public class WeatherApiApplication {
-    public static void main(String[] args) throws IOException, InterruptedException {SpringApplication.run(WeatherApiApplication.class, args);
-
-    }
-
-
-
+    public static void main(String[] args) {SpringApplication.run(WeatherApiApplication.class, args);}
 }
