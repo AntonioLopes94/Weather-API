@@ -65,10 +65,6 @@ GET /berlin
 
 
 ---
-
-Também te deixo uma **versão mais forte para portfólio**, com cara mais profissional, para trocar logo no começo:
-
-### Troque esta parte:
-```md
-Projeto desenvolvido como solução para o desafio **Weather API Wrapper Service** do [roadmap.sh](https://roadmap.sh/projects/weather-api-wrapper-service).
 https://roadmap.sh/projects/weather-api-wrapper-service
+
+Reamed feito por IA
